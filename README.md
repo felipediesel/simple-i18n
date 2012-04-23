@@ -1,6 +1,6 @@
 # I18n.js
 
-I18n.js is a lightweight and expandable internationalisation (I18n) lib.
+I18n.js is a lightweight and expandable internationalisation (I18n) lib with zero dependencies.
 
 
 ## Basic Usage
