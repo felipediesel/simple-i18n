@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>I18n.js</title>
+
+  <link rel="stylesheet" href="index.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body>
+  <h1>I18n.js</h1>
+
+  <p>A lightweight and expandable internationalisation (I18n) lib with zero dependencies.</p>
+
+  <h2>Basic Usage</h2>
+
+  <p>Before you try anything, you need to include i18n.js in your page, via the usual tags:</p>
+
+  <pre><code>&lt;script src="i18n.js" async&gt;&lt;/script&gt;</code></pre>
+
+  <p>Then you should add your translation using <code>add_translation</code> and set current locale:</p>
+
+  <pre><code>I18n.add_translation("pt-BR", {
+  greetings: {
+    hello: 'Olá',
+    welcome: 'Bem vindo'
+  }
+});
+I18n.locale = 'pt-BR';</code></pre>
+
+  <p>Now you can use <code>II18n.t</code> to translate:</p>
+
+  <pre><code>document.getElementById('hello-1').innerHTML = I18n.t('greetings.hello');
+document.getElementById('welcome-1').innerHTML = I18n.t('greetings.welcome');</code></pre>
+
+  <div class="example-box">
+    <table>
+      <tr><td>greetings.hello</td><td id="hello-1"></td></tr>
+      <tr><td>greetings.welcome</td><td id="welcome-1"></td></tr>
+    </table>
+  </div>
+
+
+  <h2>Customize</h2>
+
+  <p>You can add translations as you need, even if you overwrite or extend, it will work fine:</p>
+
+  <pre><code>I18n.add_translation("pt-BR", {
+  greetings: {
+    hello: 'Olá',
+    welcome: 'Bem vindo'
+  }
+});
+document.getElementById('hello-2').innerHTML = I18n.t('greetings.hello');
+
+I18n.add_translation("pt-BR", {
+  test: 'OK',
+  greetings: {
+    hello: 'Oi',
+    bye: 'Tchau'
+  }
+});
+
+document.getElementById('hello-3').innerHTML = I18n.t('greetings.hello');
+document.getElementById('test-3').innerHTML = I18n.t('test');</code></pre>
+
+  <div class="example-box">
+    <table>
+      <tr><td>greetings.hello</td><td id="hello-2"></td></tr>
+      <tr><td>greetings.hello</td><td id="hello-3"></td></tr>
+      <tr><td>test</td><td id="test-3"></td></tr>
+    </table>
+  </div>
+
+  <script src="i18n.js" async></script>
+  <script src="index.js" async></script>
+</body>
+</html>
