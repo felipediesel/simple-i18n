@@ -24,6 +24,14 @@ Now you can use `II18n.t` to translate:
 I18n.t('greetings.hello');
 ```
 
+## Node.js
+
+You can use I18n.js with node.js. Just require the lib and its up and running:
+
+```js
+var i18n = require('./i18n.js')
+```
+
 ## License
 
 Awesomplete is released under the MIT License. See LICENSE file for

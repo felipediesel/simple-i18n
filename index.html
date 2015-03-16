@@ -75,6 +75,23 @@ document.getElementById('test-3').innerHTML = I18n.t('test');</code></pre>
     </table>
   </div>
 
+
+  <h2>Node.js</h2>
+
+  <p>I18n.js can be used in node.js. Here is an example:</p>
+
+  <pre><code>var i18n = require('./i18n.js')
+i18n.add_translation("pt-BR", {
+  greetings: {
+    hello: 'Olá'
+  }
+});
+i18n.locale = 'pt-BR';
+
+console.log(i18n.t('greetings.hello'));</code></pre>
+
+  <p>That's it. Is that simple.</p>
+
   <script src="i18n.js" async></script>
   <script src="index.js" async></script>
 </body>
